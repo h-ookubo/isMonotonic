@@ -7,7 +7,7 @@ class Solution {
       System.out.println(ins.isMonotonic(arr2) == true);
       int[] arr3 = {1,3,2,2};
       System.out.println(ins.isMonotonic(arr3) == false);
-      System.out.println("すべてTrueなら一旦成功");
+      System.out.println("すべてTrueならコンプリート。本番テストへ");
     }
 
     public boolean isMonotonic(int[] nums) {
