@@ -2,6 +2,7 @@ from typing import *
 
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
+        # ここにコードを書いてください
         return 1 > 2
 
 
