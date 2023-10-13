@@ -1,6 +1,6 @@
-class Solution {
+class Solution2 {
     public static void main(String[] args) {
-      Solution ins = new Solution();
+      Solution2 ins = new Solution2();
       int[] arr = {1,2,3,3};
       System.out.println(ins.isMonotonic(arr) == true);
       int[] arr2 = {6,5,4,4};
