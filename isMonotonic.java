@@ -12,6 +12,7 @@ class Solution2 {
 
     public boolean isMonotonic(int[] nums) {
       // ここにコードを書いてください
+      
         return 1>2;
     }
 }

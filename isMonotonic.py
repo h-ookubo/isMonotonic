@@ -12,6 +12,8 @@ class Solution:
         preValue = 0
         # route3 の条件を満たさなくなった際に route3 に戻らないようにするための変数
         route3Escaper = 0
+        # nums の数値がひとつだった場合に False にするための変数
+        excludeSingle = 0
         # preValue と i を比較して preValue が i 以下だった場合のルート分岐変数
         route1 = 0
         # preValue と i を比較して preValue が i 以上だった場合のルート分岐変数
@@ -62,8 +64,9 @@ class Solution:
                     elif preValue == i:
                         route3 = 0
 
-            # count が 2 以降だった場合
+            # count が 2 以降だった場合、 excludeSingle に 1 を代入する
             if count >= 2:
+                excludeSingle = 1
                 # preValue が i より小さい場合、 route1 に 1 を代入し、 route3Escaper に 1 を代入する
                 if preValue < i:
                     route1 = 1
@@ -86,17 +89,19 @@ class Solution:
         print(i)
         print("--------------")
         """
-        # route3 が 3 だった場合は引数に False を返し、それ以外は引数に True を返す
+        # route3 が 3 だった場合は引数に False を返し、 excludeSingle が 1だった場合は引数に True を返す、それ以外は False
         if route3 == 3:
             return False
-        else:
+        elif excludeSingle == 1:
             return True
+        else:
+            return False
 
 ##################################################
 
 print("スタート")
-assert Solution().isMonotonic([2,2,3,3]) == True
 assert Solution().isMonotonic([1,2,2,3]) == True
+assert Solution().isMonotonic([2,2,3,3]) == True
 assert Solution().isMonotonic([-5963,-123,8,61,4649]) == True
 assert Solution().isMonotonic([6,5,4,4]) == True
 assert Solution().isMonotonic([666,-999]) == True
@@ -110,4 +115,5 @@ assert Solution().isMonotonic([10,9,-2,7]) == False
 assert Solution().isMonotonic([-321,0,8,-7]) == False
 assert Solution().isMonotonic([-99,0,0.8,0.7]) == False
 assert Solution().isMonotonic([0,0,0,0,0,0,0]) == False
+assert Solution().isMonotonic([0]) == False
 print("コンプリート!本番テストへ")
