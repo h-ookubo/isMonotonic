@@ -10,9 +10,9 @@ class Solution:
         count = 0
         #ひとつ前の値
         preValue = 0
-        # preValue と i を比較して preValue が i 以下だった場合のルート分岐変数
+        # preValue と i を比較して preValue が i 未満だった場合のルート分岐変数
         route1 = 0
-        # preValue と i を比較して preValue が i 以上だった場合のルート分岐変数
+        # preValue と i を比較して preValue が i より上だった場合のルート分岐変数
         route2 = 0
 
         # nums の数値をひとつずつ i に代入して繰り返す

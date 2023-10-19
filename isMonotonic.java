@@ -43,24 +43,57 @@ class Solution2 {
       
       //カウントするための変数
       int count = 0;
-      int a = 1;
+      //カウント変数を機能させるための数値を代入する変数
+      int countPlus = 1;
+      //現在の値
+      int nowValue = 0;
+      //ひとつ前の値
       int preValue = 0;
-
-      //
-      //boolean xxx = nums;
+      // preValue と nowValue を比較して preValue が nowValue 未満だった場合のルート分岐変数
+      int route1 = 0;
+      // preValue と nowValue を比較して preValue が nowValue より上だった場合のルート分岐変数
+      int route2 = 0;
       
-      //文字列の文字数分まで繰り返すループ文
+      //配列に代入されている数値の個数分まで繰り返すループ文
       for(int i = 0 ; i<nums.length; i++){
-        //charCount = frontAndRearSpacesExcluded.charAt(count);
-        System.out.println(nums[i]);
-        count = a++;
-        if(count >= 1){
+        //
+        nowValue = nums[i];
+        //
+        count = countPlus++;
+        //
+        if(route1 == 1 || route2 == 2){
 
+          //
+          if(route1 == 1){
+            //
+            if(preValue <= nowValue){
+              ;
+            } else {
+              return false;
+            }
+          } else if(route2 == 2){
+            if(preValue >= nowValue){
+              ;
+            } else {
+              return false;
+            }
+          }
         }
-        if(count >= 0){
+
+        //
+        if(count >= 2){
+          if(preValue < nowValue){
+            route1 = 1;
+          } else if (preValue > nowValue){
+            route2 = 2;
+          }
+        }
+        //
+        if(count >= 1){
           preValue = nums[i];
         }
       }
-        return 2 > 1;
+      //
+        return true;
     }
 }
