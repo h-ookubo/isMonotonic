@@ -26,7 +26,6 @@ class Solution:
 
             #ルート分岐
             if route1 == 1 or route2 == 2 :
-                #print("route0が正解",route1,route2)
 
                 # route1 : preValue が i 以下なら何もしない、それ以外はFalseを引数に返す
                 if route1 == 1:
@@ -42,7 +41,7 @@ class Solution:
                     else:
                         return False
 
-            # count が 2 以降だった場合、 excludeSingle に 1 を代入する
+            # count が 2 以上だった場合
             if count >= 2:
                 # preValue が i より小さい場合、 route1 に 1 を代入する
                 if preValue < i:
@@ -52,7 +51,7 @@ class Solution:
                 elif preValue > i:
                     route2 = 2
 
-            # count が 1 以降だった場合、 i を preValue に代入する
+            # count が 1 以上だった場合、 i を preValue に代入する
             if count >= 1:
                 preValue = i
 
@@ -60,6 +59,7 @@ class Solution:
         print(i)
         print("--------------")
         """
+        # True を引数に返す
         return True
 
 ##################################################
