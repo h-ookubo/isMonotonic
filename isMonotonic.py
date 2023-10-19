@@ -44,7 +44,6 @@ class Solution:
 
             # count が 2 以降だった場合、 excludeSingle に 1 を代入する
             if count >= 2:
-                excludeSingle = 1
                 # preValue が i より小さい場合、 route1 に 1 を代入する
                 if preValue < i:
                     route1 = 1
