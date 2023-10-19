@@ -44,9 +44,6 @@ class Solution2 {
       //カウントするための変数
       int count = 0;
 
-      //カウント変数を機能させるための数値を代入する変数
-      int countPlus = 1;
-
       //現在の値
       int nowValue = 0;
 
@@ -54,23 +51,23 @@ class Solution2 {
       int preValue = 0;
 
       // preValue と nowValue を比較して preValue が nowValue 未満だった場合のルート分岐変数
-      int route1 = 0;
+      boolean route1 = false;
 
       // preValue と nowValue を比較して preValue が nowValue より上だった場合のルート分岐変数
-      int route2 = 0;
+      boolean route2 = false;
       
       //配列に代入されている数値の個数分まで繰り返すループ文
       for(int i = 0 ; i<nums.length; i++){
         // i を nowValue に代入する
         nowValue = nums[i];
-        // countPlus に +1 したものを count に代入する
-        count = countPlus++;
+        // count に +1 する
+        count++;
 
         //ルート分岐
-        if(route1 == 1 || route2 == 2){
+        if(route1 == true || route2 == true){
 
           // route1 : preValue が nowValue 以下なら何もしない、それ以外はFalseを引数に返す
-          if(route1 == 1){
+          if(route1 == true){
             if(preValue <= nowValue){
               ;
             } else {
@@ -78,7 +75,7 @@ class Solution2 {
             }
 
           // route2 : preValue が nowValue 以上なら何もしない、それ以外はFalseを引数に返す
-          } else if(route2 == 2){
+          } else if(route2 == true){
             if(preValue >= nowValue){
               ;
             } else {
@@ -91,10 +88,10 @@ class Solution2 {
         if(count >= 2){
           // preValue が nowValue より小さい場合、 route1 に 1 を代入する
           if(preValue < nowValue){
-            route1 = 1;
+            route1 = true;
           // preValue が nowValue より大きい場合、 route2 に 2 を代入する
           } else if (preValue > nowValue){
-            route2 = 2;
+            route2 = true;
           }
         }
         
